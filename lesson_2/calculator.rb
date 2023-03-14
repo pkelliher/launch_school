@@ -13,6 +13,14 @@ def valid_number?(num)
   num.to_i.to_s == num
 end
 
+def number?(num)
+  valid_number?(num) || float?(num)
+end
+
+def float?(num)
+  num.to_f.to_s == num
+end
+
 def operation_to_message(op)
   case op
   when '1'
