@@ -5,12 +5,13 @@
 require 'yaml'
 MESSAGES = YAML.load_file('calculator_messages.yml')
 
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
 
 def valid_number?(num)
-  num.to_i.to_s == num
+  /^-?\d+$/.match(num)
 end
 
 def number?(num)
@@ -18,20 +19,22 @@ def number?(num)
 end
 
 def float?(num)
-  num.to_f.to_s == num
+  /\d/.match(num) && /^-?\d*\.?\d*$/.match(num)
 end
 
 def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end
+  word =  case op
+          when '1'
+            'Adding'
+          when '2'
+            'Subtracting'
+          when '3'
+            'Multiplying'
+          when '4'
+            'Dividing'
+          end
+
+  word
 end
 
 # prompt("Welcome to Calculator! Enter your name:")
