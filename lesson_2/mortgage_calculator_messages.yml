@@ -1,0 +1,6 @@
+welcome: "Welcome to the mortgage calculator, please enter your name:"
+valid_name: "Make sure to use a valid name."
+name: "Hi, #{name}"
+loan_amt: "Please enter the amount of your home loan:"
+apr: "Please enter the Annual Percentage Rate (APR) of your loan:"
+loan_years: "Please enter the duration of your loan in years:"

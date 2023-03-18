@@ -5,9 +5,8 @@
 require 'yaml'
 MESSAGES = YAML.load_file('calculator_messages.yml')
 
-
 def prompt(message)
-  Kernel.puts("=> #{message}")
+  puts("=> #{message}")
 end
 
 def valid_number?(num)
@@ -42,7 +41,7 @@ prompt(MESSAGES['welcome'])
 
 name = ''
 loop do
-  name = Kernel.gets.chomp
+  name = gets.chomp
 
   if name.empty?
     # prompt("Make sure to use a valid name.")
@@ -60,7 +59,7 @@ number1 = ''
 loop do
   # prompt("What's the first number?")
   prompt(MESSAGES['first_number'])
-  number1 = Kernel.gets.chomp
+  number1 = gets.chomp
   if valid_number?(number1)
     break
   else
@@ -73,7 +72,7 @@ number2 = ''
 loop do
   # prompt("What's the second number?")
   prompt(MESSAGES['second_number'])
-  number2 = Kernel.gets().chomp()
+  number2 = gets.chomp
 
   if valid_number?(number2)
     break
@@ -96,7 +95,7 @@ prompt(MESSAGES['operator_prompt'])
 
 operator = ''
 loop do
-  operator = Kernel.gets.chomp
+  operator = gets.chomp
 
   if %w(1 2 3 4).include?(operator)
     break
@@ -119,12 +118,11 @@ result =  case operator
             number1.to_f / number2.to_f
           end
 
-
 prompt("The result is #{result}")
 
 # prompt("Do you want to perform another calculation? (Y to calculate again)")
 prompt(MESSAGES['try_again'])
-answer = Kernel.gets.chomp
+answer = gets.chomp
 break unless answer.downcase.start_with?('y')
 end
 
