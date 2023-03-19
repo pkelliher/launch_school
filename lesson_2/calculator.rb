@@ -55,8 +55,8 @@ prompt("Hi #{name}")
 # prompt(MESSAGES['name'])
 
 loop do #main loop
-number1 = ''
-loop do
+  number1 = ''
+  loop do
   # prompt("What's the first number?")
   prompt(MESSAGES['first_number'])
   number1 = gets.chomp

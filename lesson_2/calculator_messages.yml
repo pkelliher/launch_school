@@ -12,3 +12,4 @@ operator_prompt: "What operation would you like to perform?
 must_choose: "Must choose, 1, 2, 3 or 4"
 try_again: "Do you want to perform another calculation? (Y to calculate again)"
 thank_you: "Thank you for using calculator. Good bye!"
+
