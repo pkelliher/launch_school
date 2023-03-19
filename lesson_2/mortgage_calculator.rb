@@ -66,7 +66,13 @@ loop do
     end
   end
 
-  
+  annual_interest_rate = apr.to_f / 100
+  monthly_interest_rate = annual_interest_rate / 12
+  months = loan_duration_years.to_i * 12
+
+  p annual_interest_rate
+  p monthly_interest_rate
+  p months
   
   prompt(MESSAGES['try_again'])
   answer = gets.chomp
