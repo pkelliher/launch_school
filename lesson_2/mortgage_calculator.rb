@@ -70,23 +70,14 @@ loop do
   monthly_interest_rate = annual_interest_rate / 12
   months = loan_duration_years.to_i * 12
 
-  p annual_interest_rate
-  p monthly_interest_rate
-  p months
-  
+  monthly_payment = loan_amount.to_f *
+                    (monthly_interest_rate / 
+                    (1 - (1 + monthly_interest_rate)**(-months)))
+
+  prompt("Your monthly mortgage payment is: $#{format('%.2f', monthly_payment)}")
   prompt(MESSAGES['try_again'])
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
 end
 
-
-# prompt("Thank you for using calculator. Good bye!")
 prompt(MESSAGES['thank_you'])
-
-# puts month_cal(loan_amount)
-
-# monthly payment = loan_amount * (j / (1 - (1 + j)**(-loan_duration_months)))
-# m = monthly payment
-# p = loan amount
-# j = monthly interest rate
-# n = loan duration in months
