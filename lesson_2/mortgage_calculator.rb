@@ -17,6 +17,8 @@ def float?(num)
   /\d/.match(num) && /^-?\d*\.?\d*$/.match(num)
 end
 
+system "clear"
+
 prompt(MESSAGES['welcome'])
 
 name = ''
@@ -36,7 +38,7 @@ loop do
   loan_amount = ''
   loop do
     prompt(MESSAGES['loan_amt'])
-    loan_amount = gets.chomp
+    loan_amount = gets.chompa
     if valid_number?(loan_amount)
       break
     else

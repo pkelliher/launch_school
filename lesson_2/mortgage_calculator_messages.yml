@@ -1,8 +1,9 @@
 welcome: "Welcome to the mortgage calculator, please enter your name."
 valid_name: "Make sure to use a valid name."
-loan_amt: "Please enter the amount of your home loan."
+loan_amt: "Please enter the amount of your mortgage."
 apr: "Please enter the Annual Percentage Rate (APR) of your loan."
 loan_years: "Please enter the duration of your loan in years."
 try_valid_number: "Try again, please enter a valid number."
 try_again: "Do you want to perform another mortgage calculation? (Y to calculate again)."
 thank_you: "Thank you for using the mortgage calculator, good bye!"
+#//gsub(/\$|,|\s/, '')
