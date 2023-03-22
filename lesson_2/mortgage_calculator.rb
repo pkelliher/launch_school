@@ -17,13 +17,13 @@ def float?(num)
   /\d/.match(num) && /^-?\d*\.?\d*$/.match(num)
 end
 
-system "clear"
+system 'clear'
 
 prompt(MESSAGES['welcome'])
 
 name = ''
 loop do
-  name = gets.chomp
+  name = gets.chomp.capitalize
 
   if name.empty?
     prompt(MESSAGES['valid_name'])
@@ -38,7 +38,8 @@ loop do
   loan_amount = ''
   loop do
     prompt(MESSAGES['loan_amt'])
-    loan_amount = gets.chompa
+    loan_amount = gets.chomp.gsub(/[\s,]/, '')
+
     if valid_number?(loan_amount)
       break
     else
@@ -50,6 +51,7 @@ loop do
   loop do
     prompt(MESSAGES['apr'])
     apr = gets.chomp
+
     if valid_number?(apr)
       break
     else
@@ -74,7 +76,7 @@ loop do
 
   monthly_payment = loan_amount.to_f *
                     (monthly_interest_rate / 
-                    (1 - (1 + monthly_interest_rate)**(-months)))
+                    (1 - (1 + monthly_interest_rate)**-months))
 
   prompt("Your monthly mortgage payment is: $#{format('%.2f', monthly_payment)}")
   prompt(MESSAGES['try_again'])

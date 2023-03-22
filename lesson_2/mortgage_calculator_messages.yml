@@ -6,4 +6,3 @@ loan_years: "Please enter the duration of your loan in years."
 try_valid_number: "Try again, please enter a valid number."
 try_again: "Do you want to perform another mortgage calculation? (Y to calculate again)."
 thank_you: "Thank you for using the mortgage calculator, good bye!"
-#//gsub(/\$|,|\s/, '')
