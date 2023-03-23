@@ -52,10 +52,13 @@ loop do
     prompt(MESSAGES['apr'])
     apr = gets.chomp
 
-    if valid_number?(apr)
-      break
+    # break if valid_number?(apr) 
+    # prompt(MESSAGES['try_valid_number'])
+
+    if apr.empty? || apr.to_f < 0
+      prompt('Must be a positive number.')
     else
-      prompt(MESSAGES['try_valid_number'])
+      break
     end
   end
 
