@@ -1,4 +1,4 @@
-welcome: "Welcome to the mortgage calculator; to determine your monthly mortgage payment, please enter your name to get started."
+welcome: "Welcome to the mortgage calculator; please enter your name to get started."
 valid_name: "Please make sure to enter a valid name."
 loan_amt: "Please enter the amount of your mortgage."
 apr: "Please enter the Annual Percentage Rate (APR) of your loan."
