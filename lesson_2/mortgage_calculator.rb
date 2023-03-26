@@ -78,7 +78,7 @@ loop do
                     (monthly_interest_rate / 
                     (1 - (1 + monthly_interest_rate)**-months))
 
-  prompt("Your monthly mortgage payment is: $#{format(`%.2f`, monthly_payment)}")
+  prompt("Your monthly mortgage payment is: $#{format('%.2f', monthly_payment)}")
   prompt(MESSAGES['try_again'])
   answer = gets.chomp
   break unless answer.downcase.start_with?('y')
