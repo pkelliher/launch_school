@@ -53,7 +53,7 @@ loop do
     apr = gets.chomp
 
     if apr.empty? || apr.to_f.negative?
-      prompt('APR must be a positive number.')
+      prompt(MESSAGES['pos_num_apr'])
     else
       break
     end
