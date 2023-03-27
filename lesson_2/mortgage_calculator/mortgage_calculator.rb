@@ -75,7 +75,7 @@ loop do
   months = loan_duration_years.to_i * 12
 
   monthly_payment = loan_amount.to_f *
-                    (monthly_interest_rate / 
+                    (monthly_interest_rate /
                     (1 - (1 + monthly_interest_rate)**-months))
 
   prompt("Your monthly mortgage payment is: $#{format('%.2f', monthly_payment)}")
