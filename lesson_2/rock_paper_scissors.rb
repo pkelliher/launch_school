@@ -39,7 +39,7 @@ loop do
 
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
-  break unelss answer.downcase().start_with?('y')
+  break unless answer.downcase().start_with?('y')
 end
 
 prompt("Thank you for playing. Good bye!")
