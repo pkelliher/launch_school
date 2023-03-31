@@ -1,4 +1,4 @@
-# .rubocop.yml for RB101 Lessons 2-5 (March 29th)
+# .rubocop.yml for rock_paper_scissors.rb (March 29th)
 
 AllCops:
   # Display cop names
