@@ -26,8 +26,8 @@
 
 name = 'johnson'
 
-test = ['kim', 'joe', 'sam'].each do |fname|
+['kim', 'joe', 'sam'].each do |fname|
   name = fname
 end
 
-puts test
+
