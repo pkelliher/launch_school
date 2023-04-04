@@ -1,4 +1,4 @@
-# .rubocop.yml for RB101 Lessons 2-5 (March 25th - 26th 2023)
+# .rubocop.yml for RB101 Lessons 2-5 (March 25th)
 
 AllCops:
   # Display cop names
