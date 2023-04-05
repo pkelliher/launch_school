@@ -17,6 +17,11 @@ def win?(first, second)
     (first == 'lizard' && second == 'paper')
 end
 
+# def increment_score(player, computer)
+#   player += 1
+
+# end
+
 def display_results(player, computer)
   if win?(player, computer)
     prompt("You won!")
