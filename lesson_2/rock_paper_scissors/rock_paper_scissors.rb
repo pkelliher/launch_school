@@ -17,13 +17,23 @@ def win?(first, second)
     (first == 'lizard' && second == 'paper')
 end
 
-# def increment_score(score, player, computer)
+# def score(player, computer)
 #   if win?(player)
-#     score(player) += 1
+#     player +=1
 #   elsif win?(computer)
-#     score(computer) += 1
+#     player +=1
 #   else
 #     0
+#   end
+# end
+
+# def winner(player, computer)
+#   if score(player) == 3
+#     prompt("Player won!")
+#   elsif sccore(computer) == 3
+#     prompt("Comptuer won!")
+#   else
+#     prompt("No winner!")
 #   end
 # end
 
@@ -55,6 +65,7 @@ loop do
   prompt("You chose: #{choice}; Computer chose: #{computer_choice}.")
 
   display_results(choice, computer_choice)
+  score()
 
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
