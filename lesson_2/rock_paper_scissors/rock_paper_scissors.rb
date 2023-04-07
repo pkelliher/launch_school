@@ -65,7 +65,7 @@ loop do
   prompt("You chose: #{choice}; Computer chose: #{computer_choice}.")
 
   display_results(choice, computer_choice)
-  score()
+  # score()
 
   prompt("Do you want to play again?")
   answer = Kernel.gets().chomp()
