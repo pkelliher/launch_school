@@ -1,5 +1,7 @@
 VALID_CHOICES = %w(rock paper scissors spock lizard)
 
+WIN_COMBO
+
 def prompt(message)
   Kernel.puts("=> #{message}")
 end
