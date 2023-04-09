@@ -18,6 +18,26 @@ def prompt(message)
   puts "=> #{message}"
 end
 
+def invlid_entry_for_s
+  prompt("Please enter 'sc' for scissors or 'sp' for spock")
+  input_choice
+end
+
+def invalid_entry
+  prompt("Please enter a valid entry!")
+  input_choice
+end
+
+def input_choice
+  prompt("Please enter 'r' for rock, 'p' for paper, 'sc' for scissors, 
+    'sc' for spock, and 'l' for lizard")
+    choice = gets.chomp.downcase
+end
+
+def convert_abbreviated(choice)
+  VALID_CHOICES_ABBREVIATED.values_at(choice).join
+end
+
 def win?(first, second)
   (first == 'rock' && second == 'scissors') ||
     (first == 'rock' && second == 'lizard') ||
