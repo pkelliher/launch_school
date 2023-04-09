@@ -1,4 +1,4 @@
-SELECTIONS = {
+VALID_CHOICES = {
   'rock': %w[scissors lizard],
   'paper': %w[rock spock],
   'scissors': %w[paper lizard],
@@ -6,7 +6,7 @@ SELECTIONS = {
   'lizard': %w[spock paper]
 }
 
-SELECTIONS_ABBREVIATED = {
+VALID_CHOICES_ABBREVIATED = {
   'r': 'rock',
   'p': 'paper',
   'sc': 'scissors',
@@ -17,8 +17,6 @@ SELECTIONS_ABBREVIATED = {
 def prompt(message)
   puts "=> #{message}"
 end
-
-def
 
 def win?(first, second)
   (first == 'rock' && second == 'scissors') ||
