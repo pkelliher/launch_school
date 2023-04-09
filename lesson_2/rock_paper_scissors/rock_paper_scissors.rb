@@ -1,10 +1,24 @@
-VALID_CHOICES = %w(rock paper scissors spock lizard)
+SELECTIONS = {
+  'rock': %w[scissors lizard],
+  'paper': %w[rock spock],
+  'scissors': %w[paper lizard],
+  'spock': %w[scissors rock],
+  'lizard': %w[spock paper]
+}
 
-WIN_COMBO
+SELECTIONS_ABBREVIATED = {
+  'r': 'rock',
+  'p': 'paper',
+  'sc': 'scissors',
+  'sp': 'spock',
+  'l': 'lizard'
+}
 
 def prompt(message)
-  Kernel.puts("=> #{message}")
+  puts "=> #{message}"
 end
+
+def
 
 def win?(first, second)
   (first == 'rock' && second == 'scissors') ||
@@ -18,26 +32,6 @@ def win?(first, second)
     (first == 'lizard' && second == 'spock') ||
     (first == 'lizard' && second == 'paper')
 end
-
-# def score(player, computer)
-#   if win?(player)
-#     player +=1
-#   elsif win?(computer)
-#     player +=1
-#   else
-#     0
-#   end
-# end
-
-# def winner(player, computer)
-#   if score(player) == 3
-#     prompt("Player won!")
-#   elsif sccore(computer) == 3
-#     prompt("Comptuer won!")
-#   else
-#     prompt("No winner!")
-#   end
-# end
 
 def display_results(player, computer)
   if win?(player, computer)
@@ -53,7 +47,7 @@ loop do
   choice = ''
   loop do
     prompt("Choose one: #{VALID_CHOICES.join(', ')}")
-    choice = Kernel.gets().chomp()
+    choice = gets.chomp
 
     if VALID_CHOICES.include?(choice)
       break
@@ -70,8 +64,8 @@ loop do
   # score()
 
   prompt("Do you want to play again?")
-  answer = Kernel.gets().chomp()
-  break unless answer.downcase().start_with?('y')
+  answer = gets.chomp
+  break unless answer.downcase.start_with?('y')
 end
 
 prompt("Thank you for playing. Good bye!")
