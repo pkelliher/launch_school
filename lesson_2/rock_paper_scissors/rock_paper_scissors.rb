@@ -91,29 +91,40 @@ def display_winner(wins)
   prompt("#{winner} wins!")
 end
 
-loop do
-  choice = ''
+# Prompt to play again
+def play_again?
+  yes = %w[y yes]
+  no = %w[n no]
   loop do
-    prompt("Choose one: #{VALID_CHOICES.join(', ')}")
-    choice = gets.chomp
+    prompt("Do you want to play again?")
+    answer = gets.chomp.downcase
+    break true if yes.include?(answer)
+    
+    prompt("Please enter a valid entry!")
+  end
+end
 
-    if VALID_CHOICES.include?(choice)
-      break
-    else
-      prompt("That's not a valid choice.")
-    end
+# Welcomes to the game
+prompt("Welcome to #{VALID_CHOICES.keys.join(', ')}")
+
+# Main game loop
+loop do
+  wins = {
+    player_wins: 0,
+    computer_wins: 0
+  }
+  
+  until wins.value?(3)
+    choice = input_choice
+    computer_choice = VALID_CHOICES.keys.sample
+    prompt("You selected: #{choice}, and computer selected: #{computer_choice}")
+    display_results(choice, computer_choice)
+    increment_wins(choice, computer_choice, wins)
+    prompt("Player: #{wins[:player_wins]}, Computer: #{wins[:comptuer_wins]}")
   end
 
-  computer_choice = VALID_CHOICES.sample
-
-  prompt("You chose: #{choice}; Computer chose: #{computer_choice}.")
-
-  display_results(choice, computer_choice)
-  # score()
-
-  prompt("Do you want to play again?")
-  answer = gets.chomp
-  break unless answer.downcase.start_with?('y')
+  display_winner(wins)
+  break unless play_again?
 end
 
 prompt("Thank you for playing. Good bye!")
