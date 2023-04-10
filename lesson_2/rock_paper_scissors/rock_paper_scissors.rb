@@ -86,7 +86,7 @@ def increment_wins(player, computer, wins)
 end
 
 # Displays the winner if wins equals 3
-def display_winer(wins)
+def display_winner(wins)
   winner = wins[:player_wins] == 3 ? 'Player' : 'Computer'
   prompt("#{winner} wins!")
 end
