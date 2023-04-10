@@ -58,6 +58,7 @@ def validate(choice)
     choice = invalid_entry
   end
   choice
+  end
 end
 
 # Define win using Hash key/value pairs
@@ -99,6 +100,7 @@ def play_again?
     prompt("Do you want to play again?")
     answer = gets.chomp.downcase
     break true if yes.include?(answer)
+    break false if no.include?(answer)
     
     prompt("Please enter a valid entry!")
   end
