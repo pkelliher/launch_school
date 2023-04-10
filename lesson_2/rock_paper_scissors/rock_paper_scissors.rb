@@ -19,7 +19,8 @@ def prompt(message)
 end
 
 def invlid_entry_for_s
-  prompt("Please enter 'sc' for scissors or 'sp' for spock")
+  prompt("Remember 's' is not a valid selection, please enter 'sc' for scissors 
+    or 'sp' for spock")
   input_choice
 end
 
@@ -31,7 +32,7 @@ end
 def input_choice
   prompt("Please enter 'r' for rock, 'p' for paper, 'sc' for scissors, 
     'sc' for spock, and 'l' for lizard")
-    choice = gets.chomp.downcase
+  choice = gets.chomp.downcase
 end
 
 def convert_abbreviated(choice)
