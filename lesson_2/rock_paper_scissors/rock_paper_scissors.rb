@@ -28,8 +28,7 @@ end
 
 # Checks if 's' is entered instad of 'sc' or 'sp'
 def invlid_entry_for_s
-  prompt("Remember 's' is not a valid selection, please enter 'sc' for scissors 
-    or 'sp' for spock")
+  prompt("Remember 's' is not a valid selection, please enter 'sc' to select scissors or 'sp' to select spock")
   input_choice
 end
 
@@ -41,8 +40,7 @@ end
 
 # Gets user choice
 def input_choice
-  prompt("Please enter 'r' for rock, 'p' for paper, 'sc' for scissors, 
-    'sc' for spock, and 'l' for lizard")
+  prompt("Please enter 'r' to select rock, 'p' to select paper, 'sc' to select scissors, 'sc' to select spock, and 'l' to select lizard")
   choice = gets.chomp.downcase
   validate(choice)
 end
@@ -52,14 +50,14 @@ def validate(choice)
   loop do
     choice = invalid_entry_for_s if choice == 's'
     break if VALID_CHOICES.key?(choice)
-    break (choice = convert_abbreviated(choice)) 
+    break if (choice = convert_abbreviated(choice)) 
     if VALID_CHOICES_ABBREVIATED.key?(choice)
 
     choice = invalid_entry
   end
   choice
-  end
 end
+
 
 # Define win using Hash key/value pairs
 def win?(first, second)
@@ -101,7 +99,6 @@ def play_again?
     answer = gets.chomp.downcase
     break true if yes.include?(answer)
     break false if no.include?(answer)
-    
     prompt("Please enter a valid entry!")
   end
 end
@@ -115,7 +112,7 @@ loop do
     player_wins: 0,
     computer_wins: 0
   }
-  
+
   until wins.value?(3)
     choice = input_choice
     computer_choice = VALID_CHOICES.keys.sample
@@ -128,5 +125,4 @@ loop do
   display_winner(wins)
   break unless play_again?
 end
-
 prompt("Thank you for playing. Good bye!")
