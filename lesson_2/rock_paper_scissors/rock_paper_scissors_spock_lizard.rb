@@ -1,3 +1,6 @@
+require 'yaml'
+MESSAGES = YAML.load_file('rock_paper_scissors_spock_lizard_messages.yml')
+
 # Hash of valid choices and win values
 VALID_CHOICES = {
   'rock': %w[scissors lizard],
@@ -18,7 +21,7 @@ VALID_CHOICES_ABBREVIATED = {
 
 # Prefaces each message in the console with a hash rocket
 def prompt(message)
-  puts "=> #{message}"
+  puts("=> #{message}")
 end
 
 # Converts the abbreviated entries to full entry values
@@ -28,19 +31,19 @@ end
 
 # Checks if 's' is entered instad of 'sc' or 'sp'
 def invlid_entry_for_s
-  prompt("Remember 's' is not a valid selection, please enter 'sc' to select scissors or 'sp' to select spock")
+  prompt(MESSAGES['invalid_s'])
   input_choice
 end
 
 # Checks for valid entry
 def invalid_entry
-  prompt("Please enter a valid entry!")
+  prompt(MESSAGES['invalid_selection'])
   input_choice
 end
 
 # Gets user choice
 def input_choice
-  prompt("Please enter 'r' to select rock, 'p' to select paper, 'sc' to select scissors, 'sc' to select spock, and 'l' to select lizard")
+  prompt(MESSAGES['selection'])
   choice = gets.chomp.downcase
   validate(choice)
 end
@@ -67,11 +70,11 @@ end
 # Checks for winner
 def display_results(player, computer)
   if win?(player, computer)
-    prompt("You won!")
+    prompt(MESSAGES['u_win'])
   elsif win?(computer, player)
-    prompt("Computer won!")
+    prompt(MESSAGES['c_win'])
   else
-    prompt("It's a tie!")
+    prompt(MESSAGES['tie'])
   end
 end
 
@@ -95,11 +98,11 @@ def play_again?
   yes = %w[y yes]
   no = %w[n no]
   loop do
-    prompt("Do you want to play again?")
+    prompt(MESSAGES['play_again'])
     answer = gets.chomp.downcase
     break true if yes.include?(answer)
     break false if no.include?(answer)
-    prompt("Please enter a valid entry!")
+    prompt(MESSAGES['invalid_selection'])
   end
 end
 
@@ -125,4 +128,5 @@ loop do
   display_winner(wins)
   break unless play_again?
 end
-prompt("Thank you for playing. Good bye!")
+
+prompt(MESSAGES['thank_you'])

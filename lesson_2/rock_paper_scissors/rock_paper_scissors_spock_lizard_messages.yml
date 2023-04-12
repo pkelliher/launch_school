@@ -1,0 +1,8 @@
+invalid_s: "Remember 's' is not a valid selection, please enter 'sc' to select scissors or 'sp' to select spock"
+invalid_selection: "Please enter a valid entry!"
+selection: "Please enter 'r' to select rock, 'p' to select paper, 'sc' to select scissors, 'sc' to select spock, and 'l' to select lizard"
+u_won: "You won!"
+c_win: "Computer won!"
+tie: "It's a tie!"
+play_again: "Do you want to play again?"
+thank_you: "Thank you for playing. Good bye!"
