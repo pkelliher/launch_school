@@ -3,20 +3,20 @@ MESSAGES = YAML.load_file('rock_paper_scissors_spock_lizard_messages.yml')
 
 # Hash of valid choices and win values
 VALID_CHOICES = {
-  'rock': %w[scissors lizard],
-  'paper': %w[rock spock],
-  'scissors': %w[paper lizard],
-  'spock': %w[scissors rock],
-  'lizard': %w[spock paper]
+  'rock' => %w[scissors lizard],
+  'paper' => %w[rock spock],
+  'scissors' => %w[paper lizard],
+  'spock' => %w[scissors rock],
+  'lizard' => %w[spock paper]
 }
 
 # Hash of abbreviated valid choices
 VALID_CHOICES_ABBREVIATED = {
-  'r': 'rock',
-  'p': 'paper',
-  'sc': 'scissors',
-  'sp': 'spock',
-  'l': 'lizard'
+  'r' => 'rock',
+  'p' => 'paper',
+  'sc' => 'scissors',
+  'sp' => 'spock',
+  'l' => 'lizard'
 }
 
 # Prefaces each message in the console with a hash rocket
@@ -53,14 +53,13 @@ def validate(choice)
   loop do
     choice = invalid_entry_for_s if choice == 's'
     break if VALID_CHOICES.key?(choice)
-    break if (choice = convert_abbreviated(choice)) 
-    if VALID_CHOICES_ABBREVIATED.key?(choice)
+    break (choice = convert_abbreviated(choice)) if
+    VALID_CHOICES_ABBREVIATED.key?(choice)
 
     choice = invalid_entry
   end
   choice
 end
-
 
 # Define win using Hash key/value pairs
 def win?(first, second)
@@ -102,6 +101,7 @@ def play_again?
     answer = gets.chomp.downcase
     break true if yes.include?(answer)
     break false if no.include?(answer)
+
     prompt(MESSAGES['invalid_selection'])
   end
 end
@@ -122,11 +122,10 @@ loop do
     prompt("You selected: #{choice}, and computer selected: #{computer_choice}")
     display_results(choice, computer_choice)
     increment_wins(choice, computer_choice, wins)
-    prompt("Player: #{wins[:player_wins]}, Computer: #{wins[:comptuer_wins]}")
+    prompt("Player: #{wins[:player_wins]}, Computer: #{wins[:computer_wins]}")
   end
 
   display_winner(wins)
   break unless play_again?
 end
-
 prompt(MESSAGES['thank_you'])
