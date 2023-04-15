@@ -126,6 +126,7 @@ loop do
   end
 
   display_winner(wins)
+  puts
   break unless play_again?
 end
 prompt(MESSAGES['thank_you'])
