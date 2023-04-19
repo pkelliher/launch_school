@@ -38,12 +38,24 @@
 # result = fib(0, 1)
 # puts "result is #{result}"
 
-answer = 42
+# answer = 42
 
-def mess_with_it(some_number)
-  some_number += 8
+# def mess_with_it(some_number)
+#   some_number += 8
+# end
+
+# new_answer = mess_with_it(answer)
+
+# p answer - 8
+
+def rps(fist1, fist2)
+  if fist1 == "rock"
+    (fist2 == "paper") ? "paper" : "rock"
+  elsif fist1 == "paper"
+    (fist2 == "scissors") ? "scissors" : "paper"
+  else
+    (fist2 == "rock") ? "rock" : "scissors"
+  end
 end
 
-new_answer = mess_with_it(answer)
-
-p answer - 8
+puts rps(rps(rps("rock", "paper"), rps("rock", "scissors")), "rock")
