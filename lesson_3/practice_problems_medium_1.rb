@@ -23,17 +23,27 @@
 
 # puts factors(25)
 
-limit = 15
+# limit = 15
 
-def fib(first_num, second_num)
-  limit = 15
-  while first_num + second_num < limit
-    sum = first_num + second_num
-    first_num = second_num
-    second_num = sum
-  end
-  sum
+# def fib(first_num, second_num)
+#   limit = 15
+#   while first_num + second_num < limit
+#     sum = first_num + second_num
+#     first_num = second_num
+#     second_num = sum
+#   end
+#   sum
+# end
+
+# result = fib(0, 1)
+# puts "result is #{result}"
+
+answer = 42
+
+def mess_with_it(some_number)
+  some_number += 8
 end
 
-result = fib(0, 1)
-puts "result is #{result}"
+new_answer = mess_with_it(answer)
+
+p answer - 8
