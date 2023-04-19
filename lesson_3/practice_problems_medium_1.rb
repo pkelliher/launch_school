@@ -11,14 +11,28 @@
 #   factors
 # end
 
-def factors(number)
-  divisor = number
-  factors = []
-  while divisor > 0
-    factors << number / divisor if number % divisor == 0
-    divisor -= 1
+# def factors(number)
+#   divisor = number
+#   factors = []
+#   while divisor > 0
+#     factors << number / divisor if number % divisor == 0
+#     divisor -= 1
+#   end
+#   factors
+# end
+
+# puts factors(25)
+
+limit = 15
+
+def fib(first_num, second_num)
+  while first_num + second_num < limit
+    sum = first_num + second_num
+    first_num = second_num
+    second_num = sum
   end
-  factors
+  sum
 end
 
-puts factors(25)
+result = fib(0, 1)
+puts "result is #{result}"
