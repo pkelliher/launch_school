@@ -5,20 +5,34 @@
 # puts informal_greeting  #  => "hi there"
 # puts greetings
 
+# def mess_with_vars(one, two, three)
+#   one = two
+#   two = three
+#   three = one
+# end
 
+# one = "one"
+# two = "two"
+# three = "three"
 
-def mess_with_vars(one, two, three)
-  one = two
-  two = three
-  three = one
-end
+# mess_with_vars(one, two, three)
 
-one = "one"
-two = "two"
-three = "three"
+# puts "one is: #{one}"
+# puts "two is: #{two}"
+# puts "three is: #{three}"
 
-mess_with_vars(one, two, three)
+# def mess_with_vars(one, two, three)
+#   one = "two"
+#   two = "three"
+#   three = "one"
+# end
 
-puts "one is: #{one}"
-puts "two is: #{two}"
-puts "three is: #{three}"
+# one = "one"
+# two = "two"
+# three = "three"
+
+# mess_with_vars(one, two, three)
+
+# puts "one is: #{one}"
+# puts "two is: #{two}"
+# puts "three is: #{three}"
