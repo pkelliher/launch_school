@@ -1,9 +1,9 @@
-# greetings = { a: 'hi' }
-# informal_greeting = greetings[:a]
-# informal_greeting << ' there'
+greetings = { a: 'hi' }
+informal_greeting = greetings[:a]
+informal_greeting << ' there'
 
-# puts informal_greeting  #  => "hi there"
-# puts greetings
+puts informal_greeting  #  => "hi there"
+puts greetings
 
 # def mess_with_vars(one, two, three)
 #   one = two
