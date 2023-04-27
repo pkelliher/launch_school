@@ -21,15 +21,15 @@
 # puts "two is: #{two}"
 # puts "three is: #{three}"
 
-# def mess_with_vars(one, two, three)
-#   one = "two"
-#   two = "three"
-#   three = "one"
-# end
+def mess_with_vars(one, two, three)
+  one = "two"
+  two = "three"
+  three = "one"
+end
 
-# one = "one"
-# two = "two"
-# three = "three"
+one = "one"
+two = "two"
+three = "three"
 
 # mess_with_vars(one, two, three)
 
